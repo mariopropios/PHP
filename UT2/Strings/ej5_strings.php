@@ -8,9 +8,20 @@
     $posicionDosPuntos = strpos($url,":");
     $posicionDosBarras = strpos($url,"//");
     $posicionInterrogacion = strpos($url,"?");
+    $posicionIgual = strpos($url,"=");
 
-    //Extraemos
+    //Extraemos -> https
+    $protocolo = substr($url,0,$posicionDosPuntos);
 
+    //Extraemos -> www.tienda.es/productos/portatil.php... -> www.tienda.es
+    $dominioRuta = substr($url,$posicionDosBarras+2,$posicionInterrogacion);
+    $dominioPartes = explode("/",$dominioRuta);
+    $dominio = $dominioPartes[0];
+
+
+    //VISUALIZAMOS
+    echo "Protocolo: $protocolo<br>";
+    echo "Dominio: $dominio<br>";
     ?>
 </BODY>
 </HTML>

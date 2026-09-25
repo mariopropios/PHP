@@ -30,8 +30,6 @@ echo("Código HTTP: $codigo<br>");
 echo("Navegador: $navegador<br><br>");
 echo("Tipo de erecurso: ");
 
-
-
 ?>
 </BODY>
 </HTML>

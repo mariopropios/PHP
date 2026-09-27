@@ -22,13 +22,26 @@ $codigo = $logPartes[2];
 //Agarramos la parte [3]Mozilla/5.0
 $navegador = $logPartes[3];
 
+//Extension -> PHP
+$extension = substr($recurso,-3);
+$extension = strtoupper($extension);
+
+//Petición correcta = 200
+if($codigo == 200){
+    $peticion = "SI";
+}else{
+    $peticion = "NO";
+}
+
 //VISUALIZAMOS
 echo("IP: $ip<br>");
 echo("Método: $metodo<br>");
 echo("Recurso: $recurso<br>");
 echo("Código HTTP: $codigo<br>");
 echo("Navegador: $navegador<br><br>");
-echo("Tipo de erecurso: ");
+
+echo("Tipo de erecurso: $extension<br>");
+echo("Petición correcta: $peticion");
 
 ?>
 </BODY>

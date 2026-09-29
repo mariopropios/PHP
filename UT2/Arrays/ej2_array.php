@@ -10,12 +10,11 @@
         $temperaturas = array(18, 21, 19, 24, 25, 22, 20, 26, 23, 21);
         $diferencia = array();
         $temperaturaMaxima = 0;
-        $diaMaxima;
+        $diaMaxima=1;
         $temperaturaMinima = $temperaturas[0];
-        $diaMinima;
+        $diaMinima=1;
         $sumaTemperaturas=0;
         $contadorMedia = 0;
-        $temperaturaMedia;
         $numDiasEncima=0;
 
         //Recorremos array $temperaturas
@@ -55,6 +54,27 @@
             }
         }
 
+        //VISUALIZAR 1
+        //1.Creamos la tabla
+        echo "<table border='1'>";
+        echo "<tr><th>Dia</th><th>Temperatura</th><th>Diferencia dia anterior</th></tr>";
+        //2.Recorremos array para visualizar
+        for ($i=0; $i < count($temperaturas); $i++) { 
+            $dia = $i+1;
+            echo "<tr>";
+            echo "<td>$dia</td>";               // dia
+            echo "<td>$temperaturas[$i]</td>";     // temperatura 
+            echo "<td>$diferencia[$i]</td>";            // diferencia dia anterior 
+            echo "</tr>";
+        }
+        //3.Cerramos la tabla
+        echo "</table>";
+
+        //VISUALIZAR 2
+        echo("<br>Temperatura máxima de $temperaturaMaxima ºC el dia $diaMaxima<br>");
+        echo("Temperatura mínima de $temperaturaMinima ºC el dia $diaMinima<br>");
+        echo("Temperatura media de $temperaturaMedia<br>");
+        echo("Número de dias por encima de la media $numDiasEncima");
     ?>
 </body>
 </html>

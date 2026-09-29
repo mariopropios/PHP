@@ -13,7 +13,7 @@
 
         //Mostramos en la tabla
         echo("<tr>");
-            echo("<td>$num*$i</td>");
+            echo("<td>$num x $i</td>");
             echo("<td>$resultado</td>");
         echo("</tr>");    
     }

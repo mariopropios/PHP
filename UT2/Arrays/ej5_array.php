@@ -57,6 +57,16 @@
         //var_dump($union);
 
         // G) Ordenar alfabéticamente
+        sort($union);
+
+        // H) VISUALIZAR en modo lista
+        //Creamos lista
+        echo "<ul>";
+        for ($i=0; $i < count($union); $i++) { 
+            echo "<li>" . $union[$i] . "</li>";
+        }
+        //Cerramos lista
+        echo "</ul>";
 
 
     ?>

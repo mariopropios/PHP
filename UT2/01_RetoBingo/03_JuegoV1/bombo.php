@@ -9,8 +9,6 @@
     <?php
         //Variables
         $bolasSacadas = array();
-        $bola;
-
 
         while(count($bolasSacadas)<60){
             //Generamos número aleatorio 1-60
@@ -21,6 +19,7 @@
                 $bolasSacadas[] = $bola;
             }
         }
+        var_dump($bolasSacadas);
     ?>
 </body>
 </html>

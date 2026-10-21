@@ -117,11 +117,11 @@
     // ----- VISUALIZAR 
     echo "<h2>¡BINGO!</h2>";
     foreach ($ganadores as $ganador) {
-        echo "🏆 $ganador<br>";
+        echo "El ganador es $ganador<br>";
     }
 
     echo "<h3>Cartones originales</h3>";
-    
+
     foreach ($jugadoresOriginal as $nombreJugador => $cartones) {
         foreach ($cartones as $nombreCarton => $carton) {
             echo "$nombreJugador - $nombreCarton";

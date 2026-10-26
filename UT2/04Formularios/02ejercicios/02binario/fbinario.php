@@ -8,7 +8,7 @@
 <body>
     <h2>CONVERSOR BINARIO</h2>
 
-    <form name="binario" action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
+    <form name="binario" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
         <!-- Operador 1 -->
         <label for="decimal">Número Decimal:</label><br>
         <input type="number" id="decimal" name="decimal" required><br><br>

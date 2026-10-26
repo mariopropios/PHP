@@ -52,7 +52,7 @@
         }
     }
 
-        // --- MOSTRAMOS EL RESULTADO CON EL FORMATO PEDIDO
+        // --- VISUALIZAR RESULTADO
         echo "<p>Resultado operación: $op1 $signo $op2 = $resultado</p>";
 
 

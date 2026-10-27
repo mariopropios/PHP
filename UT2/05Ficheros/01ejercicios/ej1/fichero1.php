@@ -47,7 +47,7 @@
         // Si pulsa guardar
         if (isset($_POST["guardar"])) {
             guardarAlumno($nombre, $apellido1, $apellido2, $fecha, $localidad);
-            echo "Alumno guardado correctamente"
+            echo "Alumno guardado correctamente";
         }
 
     }

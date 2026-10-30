@@ -7,7 +7,7 @@
 <body>
     <p>Mostrar el contenido del fichero alumnos2.txt en una tabla HTML</p>
     
-    <form method="post" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <input type="submit" name="mostrar" value="Mostrar datos del fichero alumnos1.txt">
     </form>
 </body>

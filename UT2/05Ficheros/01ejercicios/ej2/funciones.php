@@ -13,19 +13,12 @@
     function guardarAlumno($nombre, $apellido1, $apellido2, $fecha, $localidad){
         // 1. abrimos o creamos el archivo
         $archivo = fopen("alumnos2.txt","a"); // "a" -> para añadir a la siguiente fila
-
-        // 2. condiciones de linea
-        $nombre    = str_pad($nombre,"##"); //40
-        $apellido1 = str_pad($apellido1, "##"); // 81
-        $apellido2 = str_pad($apellido2, "##"); //123
-        $fecha     = str_pad($fecha, "##"); //133
-        $localidad = str_pad($localidad, "##"); //160
         
-        // 3. preparamos el visualizado
-        $visualizadoLinea = $nombre . $apellido1 . $apellido2 . $fecha . $localidad;
+        // 2. preparamos el visualizado
+        $visualizadoLinea = $nombre ."##". $apellido1 ."##". $apellido2 ."##". $fecha ."##". $localidad;
 
-        // 4. escribimos en el archivo
-        fwrite($archivo, $visualizadoLinea);
+        // 3. escribimos en el archivo
+        fwrite($archivo, $visualizadoLinea ."\n");
         fclose($archivo);
     }
 

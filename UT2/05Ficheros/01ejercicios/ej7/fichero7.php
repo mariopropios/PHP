@@ -30,8 +30,8 @@
     // Procesamiento de datos
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Datos del formulario
-        $origen    = test_input($_POST["origen"]);
-        $destino = test_input($_POST["destino"]);
+        $origen    = $_POST["origen"];
+        $destino = $_POST["destino"];
         $operacion = $_POST["operacion"];
 
         // Validar datos

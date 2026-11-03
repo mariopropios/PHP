@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 5 de ficheros</title>
+    <title>Ejercicio 7 de ficheros</title>
 </head>
 <body>
     <h2>Operaciones Ficheros</h2>

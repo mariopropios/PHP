@@ -1,5 +1,5 @@
 <?php
-    // Limpiar datos de entrada
+    // Limpiar datos de entrada (no lo uso)
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);

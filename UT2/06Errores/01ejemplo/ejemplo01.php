@@ -12,4 +12,11 @@
 
     //trigger error
     echo($test);
+    
+    //---------------------------------------------
+    //trigger error
+    $campo = 2;
+    if($campo>=1){
+        trigger_error("Valor debe de ser mayor o igual que 1");
+    }
 ?>

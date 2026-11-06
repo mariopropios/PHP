@@ -12,5 +12,12 @@
             return false;
         }
         
+        $fichero = fopen($ruta,"r");
+        $valores = array();
+
+        fgets($fichero); // Leemos y descartamos cabecera
+
+        
+
     }
 ?>

@@ -54,13 +54,27 @@
     <?php
         include "media7fun.php";
 
+        // 1. barajamos
         $barajaPrueba = barajaBarajeada();
 
         echo "<h1>Comprobación baraja:</h1>";
         var_dump($barajaPrueba);
 
+        // 2. simulamos jugador (con 3 carts)
+        $cartasJugador1 = [];
 
+        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 1
+        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 2
+        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 3
 
+        echo "<h1>Comprobación 3 cartas jugador 1:</h1>";
+        var_dump($cartasJugador1);
+
+        // 3. calculamos puntuación
+        $puntosTotales = calcularPuntuacionJugador($cartasJugador1);
+        
+        echo "<h1>Comprobación puntuación jugador:</h1>";
+        echo "Puntuación jugador: " . $puntosTotales;
     ?>
 </body>
 </html>

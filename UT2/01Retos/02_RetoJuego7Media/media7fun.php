@@ -15,7 +15,15 @@
         // Como son 4 palos (4 cartas iguales)
         for ($i=0; $i < 4; $i++) { 
             foreach($numerosBaraja as $num){
-                $baraja[] = $num; // sin $i para que lo añada al final
+                if ($i == 0){
+                    $baraja[] = $num . "C"; // sin $i para que lo añada al final
+                }elseif($i == 1){
+                    $baraja[] = $num . "D";
+                }elseif($i == 2){
+                    $baraja[] = $num . "T";
+                }else{
+                    $baraja[] = $num . "P";
+                }
             }
         }
 
@@ -27,13 +35,27 @@
     }
 
     // 3. Calcular valor de lascartas
-    function calcularValorCarta($numero){
-        if($numero == 1){
-            return 1.0;
-        }elseif($numero>= 10 && $numero<=12){
-            return 0.5;
-        }else{
+    function calcularValorCarta($carta){
+
+        // Extraemos lo que nos interesa de la carta "7C"
+        $numero = (int)substr($carta,0,-1); // quitamos la letra (última posición)
+
+        if($numero>= 1  && $numero <= 7){
             return (float)$numero;
+        }else{
+            return 0.5;
         }
+        
+    }
+
+    // 4. Calcular puntuación jugador
+    function calcularPuntuacionJugador($cartasJugador){
+        $totalPuntuacion = 0;
+
+        foreach($cartasJugador as $carta){
+            $totalPuntuacion += calcularValorCarta($carta);
+        }
+
+        return $totalPuntuacion;
     }
 ?>

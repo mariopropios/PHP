@@ -50,5 +50,17 @@
             </p>
         </section>
     </main>
+
+    <?php
+        include "media7fun.php";
+
+        $barajaPrueba = barajaBarajeada();
+
+        echo "<h1>Comprobación baraja:</h1>";
+        var_dump($barajaPrueba);
+
+
+
+    ?>
 </body>
 </html>

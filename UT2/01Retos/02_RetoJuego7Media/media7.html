@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reto 2.2 — Siete y Media</title>
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;background:#f2f6f8;color:#172c42;font-family:Arial,Helvetica,sans-serif}
+        .shell{max-width:1100px;margin:28px auto;padding:0 20px}
+        .banner{background:linear-gradient(115deg,#075c48,#0c8c6b);color:white;padding:25px 30px;border-radius:15px 15px 0 0}
+        .banner h1{margin:0 0 6px;font-size:30px}
+        .banner p{margin:0;opacity:.9}
+        .panel{background:white;border:1px solid #dbe5eb;border-radius:13px;box-shadow:0 8px 24px #142c3a10;padding:24px;margin:20px 0}
+        .panel h2{margin:0 0 19px;font-size:21px;color:#075c48}
+        .fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+        .field label{display:block;font-size:14px;font-weight:bold;margin-bottom:7px}
+        .field input{width:100%;padding:12px 13px;border:1px solid #c5d4dc;border-radius:7px;font-size:16px;background:#fff}
+        .help{font-size:12px;color:#6a7d8b;margin-top:5px}
+        .actions{display:flex;gap:12px;margin-top:23px}
+        button{border:0;border-radius:7px;background:#07845e;color:white;padding:13px 23px;font-weight:bold;font-size:15px;cursor:pointer}
+        button[type=reset]{background:#e7edf2;color:#263c52}
+        .notice{padding:17px 20px;border:1px solid #a8dec1;background:#eaf9f0;color:#08633b;border-radius:10px;font-size:19px;font-weight:bold;margin-bottom:16px}
+        .notice.bad{background:#fff6e9;border-color:#eed4a4;color:#8d4b12}
+        .score{width:100%;border-collapse:collapse;font-size:15px}
+        .score th{background:#e9f2f5;color:#143d50;text-align:left;padding:12px}
+        .score td{border-bottom:1px solid #e3ebf0;padding:12px}
+        .score tr.win{background:#edfaf2}
+        .cards{display:flex;gap:5px}
+        .playing{width:43px;height:62px;border:1px solid #cbd5dc;border-radius:6px;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 4px #0001;font-weight:bold;font-size:17px}
+        .red{color:#d12c3b}
+        .black{color:#1e2c38}
+        .playing span{font-size:22px}
+        .total{font-weight:bold;color:#086b45}
+        .file{margin-top:15px;background:#f5f8fa;border:1px solid #dce5ea;border-radius:9px;padding:15px}
+        .file strong{display:block;margin-bottom:10px}
+        .file pre{font-size:13px;line-height:1.55;margin:0;font-family:Consolas,monospace}
+        small{color:#6d7e88}
+        .topnote{margin:0 0 15px;color:#617382}
+        .wide{max-width:970px}
+        .formonly{max-width:770px}
+    </style>
+</head>
+<body>
+    <main class="shell formonly">
+        <div class="banner">
+            <h1>🂡 Juego de las Siete y Media</h1>
+            <p>Reto 2.2 · Desarrollo Web en Entorno Servidor · PHP y ficheros</p>
+        </div>
+        <section class="panel">
+            <h2>♠ Configuración de la partida</h2>
+            <form method="post" action="media7alumnos.php">
+                <div class="fields">
+                    <div class="field">
+                        <label for="jugador1">Jugador 1</label>
+                        <input id="jugador1" name="jugador1" value="Lamine Yamal" required>
+                    </div>
+                    <div class="field">
+                        <label for="jugador2">Jugador 2</label>
+                        <input id="jugador2" name="jugador2" value="Kylian Mbappé" required>
+                    </div>
+                    <div class="field">
+                        <label for="jugador3">Jugador 3</label>
+                        <input id="jugador3" name="jugador3" value="Pedri González" required>
+                    </div>
+                    <div class="field">
+                        <label for="jugador4">Jugador 4</label>
+                        <input id="jugador4" name="jugador4" value="Vinícius Júnior" required>
+                    </div>
+                    <div class="field">
+                        <label for="cartas">Cartas a repartir</label>
+                        <input id="cartas" type="number" name="cartas" min="1" max="10" value="4" required>
+                        <div class="help">Número de cartas por jugador</div>
+                    </div>
+                    <div class="field">
+                        <label for="apuesta">Cantidad apostada (€)</label>
+                        <input id="apuesta" type="number" name="apuesta" min="0.01" step="0.01" value="300000" required>
+                        <div class="help">Importe total de la ronda</div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit">▶ Jugar partida</button>
+                    <button type="reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -54,27 +54,52 @@
     <?php
         include "media7fun.php";
 
-        // 1. barajamos
-        $barajaPrueba = barajaBarajeada();
+        // RECOGEMOS DATOS FORMULARIO
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        echo "<h1>Comprobación baraja:</h1>";
-        var_dump($barajaPrueba);
+            // RECOGEMOS DATOS DEL JUEGO
+            $numeroCartasPorJugador = (int)test_input($_POST["cartas"]);
+            $apuestaTotal = (float)test_input($_POST["apuesta"]);
 
-        // 2. simulamos jugador (con 3 carts)
-        $cartasJugador1 = [];
+            // RECOGEMOS DATOS DE JUEGADORES
+            $jugadores = [
+                test_input($_POST["jugador1"]),
+                test_input($_POST["jugador2"]),
+                test_input($_POST["jugador3"]),
+                test_input($_POST["jugador4"])
+            ];
 
-        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 1
-        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 2
-        $cartasJugador1[] = array_shift($barajaPrueba); // Carta 3
+            // 1. barajamos
+            $baraja = barajaBarajeada();
 
-        echo "<h1>Comprobación 3 cartas jugador 1:</h1>";
-        var_dump($cartasJugador1);
+            // 2. simulamos una partida
+            $puntuacionesPartida = [];
 
-        // 3. calculamos puntuación
-        $puntosTotales = calcularPuntuacionJugador($cartasJugador1);
+            foreach($jugadores as $jugador){
+                $cartasJugador = [];
+
+                // repartimos cartas por jugador
+                for ($i=0; $i < $numeroCartasPorJugador; $i++) { 
+                    $cartasJugador[] = array_shift($baraja);
+                }
+
+                // calculamos puntuación total
+                $puntosTotales = calcularPuntuacionJugador($cartasJugador);
+
+                // guardamos los datos de este jugador
+                $puntuacionesPartida[$jugador] = [
+                    "cartas" => $cartasJugador,
+                    "puntos" => $puntosTotales
+                ];
+            }
+
+            // COMPROBACIONES 
+            echo "<h1>Comprobación baraja:</h1>";
+            var_dump($baraja);
+            echo "<h1>Comprobación jugadores:</h1>";
+            var_dump($puntuacionesPartida);
+        }
         
-        echo "<h1>Comprobación puntuación jugador:</h1>";
-        echo "Puntuación jugador: " . $puntosTotales;
     ?>
 </body>
 </html>

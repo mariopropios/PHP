@@ -58,4 +58,9 @@
 
         return $totalPuntuacion;
     }
+
+    // 5. Ganador de la partida
+    function ganadorPartida(){
+        
+    }
 ?>

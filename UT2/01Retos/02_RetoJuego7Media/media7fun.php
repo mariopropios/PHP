@@ -27,7 +27,13 @@
     }
 
     // 3. Calcular valor de lascartas
-    function calcularValorCarta(){
-
+    function calcularValorCarta($numero){
+        if($numero == 1){
+            return 1.0;
+        }elseif($numero>= 10 && $numero<=12){
+            return 0.5;
+        }else{
+            return (float)$numero;
+        }
     }
 ?>

@@ -101,6 +101,8 @@
             var_dump($baraja);
             echo "<h1>Comprobación jugadores:</h1>";
             var_dump($puntuacionesPartida);
+             echo "<h1>Comprobación ganadores:</h1>";
+            var_dump($resultadoPartida);
         }
         
     ?>

@@ -60,7 +60,61 @@
     }
 
     // 5. Ganador de la partida
-    function ganadorPartida(){
-        
+    function ganadorPartida($puntuacionesPartida, $apuestaTotal){
+        $tiene7media = false;
+        $puntuacionMasAlta = 0;
+        $ganadores = [];
+
+        // Recorremos array puntuaciones partida
+        foreach($puntuacionesPartida as $jugador => $datos){
+            $puntos = $datos["puntos"]; // Accedemos a los puntos del array asociativo
+
+            // Si el jugador no se ha pasado de 7.5
+            if($puntos <= 7.5){
+
+                // si tiene 7.5 exacto
+                if($puntos == 7.5){
+                    $tiene7media = true;
+                }
+
+                // buscamos la puntuación más alta
+                if($puntos > $puntuacionMasAlta){
+                    $puntuacionMasAlta = $puntos;
+                    $ganadores = [$jugador];
+
+                }elseif($puntos == $puntuacionMasAlta && $puntuacionMasAlta>0){
+                    $ganadores[] = $jugador;
+
+                }
+            }
+        }
+
+        // Calculamos el premio por jugador
+        $premio = 0;
+        $porcentaje;
+        $premioTotal;
+
+        if(count($ganadores) > 0){
+            
+            // Si hay 7.5 exacto
+            if($tiene7media == true){
+                $porcentaje = 0.80;
+            }else{
+                $porcentaje = 0.50;
+            }
+
+            // el total a repartir sería
+            $premioTotal = $apuestaTotal * $porcentaje;
+
+            // premio por jugador
+            $premio = $premioTotal / count($ganadores);
+        }
+
+        return [
+            'ganadores' => $ganadores,
+            'maxPuntuacion' => $puntuacionMasAlta,
+            'premioIndividual' => $premio,
+            'tiene7media' => $tiene7media
+        ];
     }
 ?>

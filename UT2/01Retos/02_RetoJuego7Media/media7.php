@@ -91,6 +91,9 @@
                     "cartas" => $cartasJugador,
                     "puntos" => $puntosTotales
                 ];
+
+                // ganador
+                $resultadoPartida = ganadorPartida($puntuacionesPartida, $apuestaTotal);
             }
 
             // COMPROBACIONES 
